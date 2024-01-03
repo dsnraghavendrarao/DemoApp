@@ -41,7 +41,7 @@ class EmployeesController < ApplicationController
 
   def business_year_net_payable
     @year = params[:year]
-    render json: {success: false,message: "Invalide Employee"} && return unless employee.present?
+    render json: {success: false,message: "Invalide Employee"} && return unless @employee.present?
     @employee_salary = @employee.tax_deductions(@year)
   end
 
